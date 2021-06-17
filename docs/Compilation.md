@@ -24,7 +24,7 @@ This is required for building the translation DLL files.
 
 1. Install Python version 3.8.7 from <https://www.python.org/downloads/release/python-387/> (You can use Python 3.6 or later version)
 2. Run this command to install a required library:
-    `C:\Program Files\Python38\Scripts\pip install --upgrade polib`
+    C:\Program Files\Python38\Scripts\pip install --upgrade polib
 
 
 ## Part C: Preparing the MSYS and GCC environment (optional)
@@ -38,7 +38,7 @@ releases.
 
 1. Download MSYS2 from <http://www.msys2.org/>.
    If you are using a 64-bit Operating System, which you should be, get the 64-bit version.
-2. Install it to for example **`C:\MSYS64\`**. The installation path should be specified in your **build.user.bat** configuration script that you will create later.
+2. Install it to for example **`C:\MSYS64\`**. The installation path should be specified in your the build.user.bat configuration script that you will create later.
 3. Run `msys2_shell.bat`
 4. Install some additional required tools by running this command:
    ```text
@@ -51,9 +51,9 @@ releases.
    When you are asked to restart MSYS, say yes. Start MSYS again and repeat the above command. Once everything is updated, you can close MSYS.
 6. Download the latest mingw-w64-gcc package from <http://files.1f0.de/mingw/> and extract it to folder **`C:\MSYS64\mingw64`** (overwriting any existing files).
 7. It is recommended to add **`C:\MSYS64\mingw64\bin`** and **`C:\MSYS64\usr\bin`** to the %PATH% environment variable.
-   This allows you to run GCC and all other MSYS tools from the Windows command line.  
-   Windows Control Panel > System > Advanced System Settings > Environment variables.  
-   On Windows 10 you can access the legacy control panel by clicking on the Windows Start menu and typing `control.exe`.
+   This allows you to run GCC and all other MSYS tools from the Windows command line.
+   Windows Control Panel > System > Advanced System Settings > Environment variables
+   On Windows 10 you can access the legacy control panel by clicking on the Windows Start menu and typing `control.exe`
 
 
 ## Part D: Yasm
@@ -67,21 +67,21 @@ Download YASM and save it as **yasm.exe** in a folder that is included in %PATH%
 
 Create a file named **build.user.bat** in the source code folder of MPC-HC (see part F). It should have the following contents: (with paths adapted for your system!)
 
-```bat
-@ECHO OFF
-REM [Required for LAVFilters] MSYS2/MinGW paths:
-SET "MPCHC_MSYS=C:\MSYS64"
-SET "MPCHC_MINGW32=C:\MSYS64\mingw64"
-SET "MPCHC_MINGW64=C:\MSYS64\mingw64"
-SET "MSYSTEM=MINGW32"
-SET "MSYS2_PATH_TYPE=inherit"
-REM [Optional] Specify GIT location if it is not already set in %PATH%
-SET "MPCHC_GIT=C:\Program Files\Git"
-REM [Optional] If you plan to modify the translations, install Python 3.8 and set the variable to its path
-SET "MPCHC_PYTHON=C:\Program Files\Python38"
-REM [Optional] If you want to customize the Windows SDK version used, set this variable
-SET "MPCHC_WINSDK_VER=8.1"
-```
+    ```bat
+    @ECHO OFF
+    REM [Required for LAVFilters] MSYS2/MinGW paths:
+    SET "MPCHC_MSYS=C:\MSYS64"
+    SET "MPCHC_MINGW32=C:\MSYS64\mingw64"
+    SET "MPCHC_MINGW64=C:\MSYS64\mingw64"
+    SET "MSYSTEM=MINGW32"
+    SET "MSYS2_PATH_TYPE=inherit"
+    REM [Optional] Specify GIT location if it is not already set in %PATH%
+    SET "MPCHC_GIT=C:\Program Files\Git"
+    REM [Optional] If you plan to modify the translations, install Python 3.8 and set the variable to its path
+    SET "MPCHC_PYTHON=C:\Program Files\Python38"
+    REM [Optional] If you want to customize the Windows SDK version used, set this variable
+    SET "MPCHC_WINSDK_VER=8.1"
+    ```
 
 Notes:
 
@@ -89,7 +89,7 @@ Notes:
   ```
   SET "MPCHC_VS_PATH=%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Community\"
   ```
-* If you installed the MSYS package in another directory then make sure that you have set the correct paths in your **build.user.bat** file.
+* If you installed the MSYS package in another directory then make sure that you have set the correct paths in your `build.user.bat` file.
 * If you don't have Git installed then the build version will be inaccurate, the revision number will be a hard-coded as zero.
 
 
@@ -99,7 +99,7 @@ You need Git for downloading the source code.
 
 Install **Git for Windows** from <https://git-for-windows.github.io/> and also **Git Extensions** from <http://gitextensions.github.io/>.
 Choose `Use Git from the Windows command prompt`. This isn't mandatory, so if you choose
-`Use Git from Git Bash only` make sure you set the `MPCHC_GIT` variable in **build.user.bat**.
+`Use Git from Git Bash only` make sure you set the `MPCHC_GIT` variable in `build.user.bat`.
 
 Use Git to clone MPC-HC's repository to **C:\mpc-hc** (or anywhere else you like).
 
@@ -130,7 +130,7 @@ Use Git to clone MPC-HC's repository to **C:\mpc-hc** (or anywhere else you like
     ```
 
 Note that you can add `-b master` to the `git clone` command if you want to get the latest
-stable version instead of the latest development version.
+stable version instead of the latest development version
         
 ## Part G: Compiling the MPC-HC source
 
@@ -145,7 +145,7 @@ stable version instead of the latest development version.
 8. Build **BuildAll** project.
 9. You now have **mpcresources.XX.dll** under **C:\mpc-hc\bin\mpc-hc_x86\Lang**
 
-Alternatively, you can use **build.bat** that can build everything for you (run: `build.bat help` for more info).
+Alternatively, you can use **build.bat** that can build everything for you (run: `build.bat help` for more info)
 
 
 ## Part H: Building the installer
